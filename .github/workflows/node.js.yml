@@ -24,8 +24,8 @@ jobs:
         cache: 'npm'
     
     - name: Install Dependencies
-      run: npm cache clean –force
-           npm install --save
+      run: npm install --save
+           
 
     - name: Build React App
       run: npm run build
