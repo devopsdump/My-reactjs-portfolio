@@ -7,12 +7,16 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build-and-deploy:
-    runs-on: self-hosted
-
+  test-base:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        alpine:
+          - latest-stable
+          - edge
+        arch:
+          - x86_64
+          - aarch64  # emulated
 
     steps:
     - uses: actions/checkout@v3
